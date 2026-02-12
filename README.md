@@ -1,32 +1,63 @@
-# flarex-interpreter
-The FlareX Programming language Interpreter.
+# FlareX Interpreter
 
-This is the repository for the FlareX Programming Language interpreter i made.
-It is in Unstable Development, so definitely NOT for real world use.
+The official interpreter for the **FlareX Programming Language**.
 
-You can build it using make and run it, the building is currently only supported on Linux.
+> |> Status: Unstable development
+> Not intended for production or real-world use.
 
-# Features
+---
 
-The Interpreter can read a file and generate bytecode from it,
-for more information, run:
-"./fx -h"
-and for the guide:
-"./fx -g".
+## Overview
 
-It is able to read the source code and compile it into the FlareX Bytecode file,
-which can then be executed by the FlareX Runner.
+This repository contains the reference implementation of the FlareX interpreter.
 
-The language itself has simple instructions:
+It reads FlareX source code, compiles it into FlareX bytecode, and allows execution through the FlareX Runner.
 
-out <something> For printing a certain object on the terminal
-  - Supports variables via the . prefix, intergers, and strings
-var <type> <name> = <value> for storing variables.
-  - Currently supports intergers and strings
-ext <exit_code> For terminating the program and setting the exit code.
-  - The argument is always an interger
+Currently, building is supported on **Linux only**.
 
-There is currently no way to distuingish between unsigned, signed, long, long long and short intergers,
-and strings are always multiple characters.
+---
 
-If you encounter any errors or have a new feature in mind, please contact me!
+## Building
+
+Use `make` to build the project:
+
+`make`
+
+After building, the *fx* binary can be used.
+
+## Usage
+
+Display help information:
+
+`./fx -h` or `./fx -help`
+
+Display the language guide:
+
+`./fx -g` or `./fx -guide`
+
+The interpreter supports compiling and execution:
+
+  - It reads the FlareX source file (example.flx)
+  - Compiles it into bytecode
+  - Outputs it into a .fxb (FlareX Bytecode) file
+  - Executes the bytecode file
+
+## Features
+
+FlareX currently has three main features:
+
+out  -  Outputs a specified object onto the terminal.
+
+*Currently supports signed intergers, strings and variables via the "." prefix*
+
+var  -  Creates a variable
+
+Var has two variables types:
+
+int (signed int)
+str (multi-character string, aka std::string in C++)
+
+ext  -  Sets the exit code and terminates the program
+
+Only an int is supported.
+NOTE: Anything that is after the ext instruction will simply not be executed.

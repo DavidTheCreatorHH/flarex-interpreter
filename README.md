@@ -20,11 +20,11 @@ which can then be executed by the FlareX Runner.
 The language itself has simple instructions:
 
 out <something> For printing a certain object on the terminal
-  > Supports variables via the . prefix, intergers, and strings
+  - Supports variables via the . prefix, intergers, and strings
 var <type> <name> = <value> for storing variables.
-  > Currently supports intergers and strings
+  - Currently supports intergers and strings
 ext <exit_code> For terminating the program and setting the exit code.
-  > The argument is always an interger
+  - The argument is always an interger
 
 There is currently no way to distuingish between unsigned, signed, long, long long and short intergers,
 and strings are always multiple characters.

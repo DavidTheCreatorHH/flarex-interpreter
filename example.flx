@@ -1,0 +1,5 @@
+var int x = 1;
+out .x;
+var int x = 2;
+out .x;
+ext 0;
